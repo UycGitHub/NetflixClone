@@ -50,4 +50,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.google.dagger/dagger
     implementation("com.google.dagger:dagger:2.51.1")
     kapt("com.google.dagger:dagger-compiler:2.51.1")
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    // https://mvnrepository.com/artifact/com.squareup.okhttp/okhttp
+    implementation("com.squareup.okhttp:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 }
