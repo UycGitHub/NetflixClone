@@ -55,4 +55,7 @@ dependencies {
     // https://mvnrepository.com/artifact/com.squareup.okhttp/okhttp
     implementation("com.squareup.okhttp:okhttp:4.12.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    //gson retrofit converter, same version with retrofit
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 }
