@@ -2,7 +2,6 @@ package com.umutyusufcinar.netflixclone.network
 
 import com.umutyusufcinar.netflixclone.network.model.dto.MovieResponseDTO
 import retrofit2.http.GET
-import retrofit2.Call
 import retrofit2.http.Query
 
 interface TmdbApi  {
@@ -11,5 +10,5 @@ interface TmdbApi  {
                     language: String,
                     @Query("page")
                     page: Int,
-    ):Call<MovieResponseDTO>
+    ):NetworkResponse<MovieResponseDTO, ErrorResponse>
 }

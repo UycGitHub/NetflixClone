@@ -1,6 +1,7 @@
 package com.umutyusufcinar.netflixclone.di
 
 import com.umutyusufcinar.netflixclone.AppConstants
+import com.umutyusufcinar.netflixclone.network.NetworkResponseAdapterFactory
 import com.umutyusufcinar.netflixclone.network.TmdbApi
 import dagger.Module
 import dagger.Provides
@@ -51,6 +52,7 @@ class NetworkModule {
             .baseUrl(AppConstants.BASE_URL)
             .client(loggingClient)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(NetworkResponseAdapterFactory())
             .build()
     }
 
