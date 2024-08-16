@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.umutyusufcinar.netflixclone.MainActivity
 import com.umutyusufcinar.netflixclone.R
+import com.umutyusufcinar.netflixclone.viewmodel.HomeViewModel
 import javax.inject.Inject
 
 class HomeFragment : Fragment() {

@@ -10,12 +10,10 @@ class NetworkResponseAdapter <S: Any, E: Any> (
     private val successType: Type,
     private val errorBodyConverter: Converter<ResponseBody, E>
 ): CallAdapter<S, Call<NetworkResponse<S, E>>> {
-    override fun responseType(): Type {
-        TODO("Not yet implemented") //burası başlık 9, sıra 10. videodan devam
-    }
+    override fun responseType(): Type = successType
 
-    override fun adapt(p0: Call<S>): Call<NetworkResponse<S, E>> {
-        TODO("Not yet implemented")
+    override fun adapt(call: Call<S>): Call<NetworkResponse<S, E>> {
+        return NetworkResponseCall(call, errorBodyConverter)
     }
 
 }
