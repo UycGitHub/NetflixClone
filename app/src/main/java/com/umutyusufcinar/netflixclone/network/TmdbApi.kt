@@ -10,5 +10,29 @@ interface TmdbApi  {
                     language: String,
                     @Query("page")
                     page: Int,
-    ):NetworkResponse<MovieResponseDTO, ErrorResponse>
+    ):NetworkResponse<MovieResponseDTO, Error>
+
+    @GET("movie/top_rated")
+    suspend fun getTopRatedMovies(
+        @Query("language")
+        language: String,
+        @Query("page")
+        page: Int
+    ): NetworkResponse<MovieResponseDTO, Error>
+
+    @GET("movie/upcoming")
+    suspend fun getUpcomingMovies(
+        @Query("language")
+        language: String,
+        @Query("page")
+        page: Int
+    ): NetworkResponse<MovieResponseDTO, Error>
+
+    @GET("movie/popular")
+    suspend fun getPopularMovies(
+        @Query("language")
+        language: String,
+        @Query("page")
+        page: Int
+    ): NetworkResponse<MovieResponseDTO, Error>
 }

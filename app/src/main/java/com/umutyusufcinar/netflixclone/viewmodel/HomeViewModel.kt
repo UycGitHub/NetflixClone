@@ -15,7 +15,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(val tmdbApi: TmdbApi): ViewModel() {
     fun getTrending(){
         viewModelScope.launch {
-            val response = tmdbApi.getTrending("us", page = 1)
+            val response = tmdbApi.getTrending("en-US", page = 1)
             when(response){
                 is NetworkResponse.Success -> {
                     Log.d("HomeViewModel", "Success")
