@@ -1,12 +1,12 @@
-package com.umutyusufcinar.netflixclone
+package com.umutyusufcinar.netflixclone.repository
 
 import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.umutyusufcinar.netflixclone.AppConstants
 import com.umutyusufcinar.netflixclone.network.NetworkResponse
 import com.umutyusufcinar.netflixclone.network.TmdbApi
 import com.umutyusufcinar.netflixclone.network.model.dto.MovieDTO
 import com.umutyusufcinar.netflixclone.network.model.dto.MovieResponseDTO
-import com.umutyusufcinar.netflixclone.repository.HomeDataSourceImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.resetMain
@@ -23,7 +23,6 @@ import org.mockito.Mock
 import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnitRunner
 import java.io.IOException
-import com.umutyusufcinar.netflixclone.repository.HomeDataSource
 
 @RunWith(MockitoJUnitRunner::class)
 class HomeDataSourceImplTest{
