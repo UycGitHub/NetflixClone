@@ -65,4 +65,10 @@ dependencies {
 
     implementation("androidx.navigation:navigation-fragment:2.7.3")
     implementation("androidx.navigation:navigation-ui:2.7.3")
+
+    //tests
+    testImplementation("org.mockito:mockito-core:4.0.0") //mockito
+    testImplementation("junit:junit:4.13.2") //junit
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0") //coroutines test
+    testImplementation("androidx.arch.core:core-testing:2.1.0") //livedata test
 }
