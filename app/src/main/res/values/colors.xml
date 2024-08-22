@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="textButtonGray">#BCBCBC</color>
+    <color name="textErrorGray">#4CAF50</color>
+    <color name="colorPrimaryDark">#181818</color>
+    <color name="colorPrimary">#2B2B2B</color>
+    <color name="colorAccentGreen">#4CAF50</color>
+
+
+
 </resources>
