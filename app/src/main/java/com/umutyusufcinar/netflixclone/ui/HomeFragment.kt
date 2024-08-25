@@ -6,10 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.umutyusufcinar.netflixclone.MainActivity
 import com.umutyusufcinar.netflixclone.R
+import com.umutyusufcinar.netflixclone.databinding.FragmentHomeBinding
+import com.umutyusufcinar.netflixclone.network.model.dto.MovieDTO
 import com.umutyusufcinar.netflixclone.viewmodel.HomeViewModel
 import javax.inject.Inject
 
@@ -23,14 +28,30 @@ class HomeFragment : Fragment() {
         (requireActivity() as MainActivity).mainComponent.inject(this)
     }
 
+    private lateinit var binding: FragmentHomeBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_home, container, false)
-        viewModel.getTrending()
-        return view
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+
+        attachObservers()
+
+        return binding.root
+    }
+
+    private fun attachObservers() {
+        listsOfMoviesObserver()
+    }
+
+    private fun listsOfMoviesObserver() {
+        viewModel.listsOfMovies?.observe(viewLifecycleOwner, Observer { lists -> lists.let {
+            binding.rvListsOfMovies.LayoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            binding.rvListsOfMovies.adapter = ListsOfMoviesAdapter(requireContext(), lists)
+        } })
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
