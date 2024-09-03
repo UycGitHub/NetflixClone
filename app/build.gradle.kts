@@ -79,6 +79,9 @@ dependencies {
     //RecyclerView
     implementation("androidx.recyclerview:recyclerview:1.2.1")
 
+    //Material Design
+    implementation("com.google.android.material:material:1.4.0")
+
     //Picasso
     implementation ("com.squareup.picasso:picasso:2.8")
 }
