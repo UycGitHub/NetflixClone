@@ -48,9 +48,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun listsOfMoviesObserver() {
-        viewModel.listsOfMovies?.observe(viewLifecycleOwner, Observer { lists -> lists.let {
-            binding.rvListsOfMovies.LayoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-            binding.rvListsOfMovies.adapter = ListsOfMoviesAdapter(requireContext(), lists)
+        viewModel.listsOfMovies?.observe(viewLifecycleOwner, Observer { lists -> lists?.let {
+            binding.rvListsOfMovies.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            binding.rvListsOfMovies.adapter = ListsOfMoviesAdapter(requireContext(), it)//burası değişebilir
         } })
     }
 
